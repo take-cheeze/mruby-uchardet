@@ -67,6 +67,15 @@ extern "C" void mrb_mruby_uchardet_gem_init(mrb_state *M) {
   mrb_define_method(M, cls, "handle", handle, MRB_ARGS_REQ(1));
   mrb_define_method(M, cls, "end", end, MRB_ARGS_NONE());
   mrb_define_method(M, cls, "result", result, MRB_ARGS_NONE());
+
+  mrb_define_const(M, cls, "FILTER_CHINISE_SIMPLIFIED", mrb_fixnum_value(NS_FILTER_CHINESE_SIMPLIFIED));
+  mrb_define_const(M, cls, "FILTER_CHINISE_TRADITIONAL", mrb_fixnum_value(NS_FILTER_CHINESE_TRADITIONAL));
+  mrb_define_const(M, cls, "FILTER_JAPANESE", mrb_fixnum_value(NS_FILTER_JAPANESE));
+  mrb_define_const(M, cls, "FILTER_KOREAN", mrb_fixnum_value(NS_FILTER_KOREAN));
+  mrb_define_const(M, cls, "FILTER_NON_CJK", mrb_fixnum_value(NS_FILTER_NON_CJK));
+  mrb_define_const(M, cls, "FILTER_ALL", mrb_fixnum_value(NS_FILTER_ALL));
+  mrb_define_const(M, cls, "FILTER_CHINESE", mrb_fixnum_value(NS_FILTER_CHINESE));
+  mrb_define_const(M, cls, "FILTER_CJK", mrb_fixnum_value(NS_FILTER_CJK));
 }
 
 extern "C" void mrb_mruby_uchardet_gem_final(mrb_state*) {}
